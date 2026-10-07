@@ -50,6 +50,12 @@ public class CompanionMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        dev.companion.telemetry.Telemetry.init();
+        net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
+            if (server.isDedicated()) {
+                dev.companion.telemetry.Telemetry.sessionEnded(0, 0);
+            }
+        });
         FabricDefaultAttributeRegistry.register(COMPANION, CompanionEntity.createCompanionAttributes());
         SwordDrawSound.register();
         // Natural spawning: rare, single, on grass in any Overworld biome.

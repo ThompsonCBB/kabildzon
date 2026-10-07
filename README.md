@@ -67,6 +67,21 @@ He plays his own sound when handing the item over 🔊
 
 ---
 
+## 📊 Telemetry & privacy
+
+Kabildzon sends **anonymous** usage statistics to help improve the mod. It is **enabled by default (opt-out)** and a one-time notice is shown in chat the first time you join a world.
+
+**What is collected:**
+- A random install ID (UUID generated locally, not linked to your account)
+- Mod, Minecraft, Fabric Loader and Fabric API versions, environment (client/server), number of installed mods
+- OS, architecture, Java version, RAM amount, CPU core count, game language
+- Launches, world joins (singleplayer/multiplayer, time since launch), session length
+- Error stack traces **only** if they come from this mod
+
+**What is NOT collected:** usernames, UUIDs, IP-based location, chat, world names, server addresses or any other personal data.
+
+**How to disable:** open `config/kabildzon-telemetry.json` and set `"enabled": false`.
+
 ## 📦 Installation
 
 1. Install **[Fabric Loader](https://fabricmc.net/use/)** for Minecraft **1.20.1**.

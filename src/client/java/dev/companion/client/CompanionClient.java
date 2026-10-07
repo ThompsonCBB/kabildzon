@@ -17,5 +17,6 @@ public class CompanionClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(COMPANION_LAYER,
                 () -> TexturedModelData.of(PlayerEntityModel.getTexturedModelData(Dilation.NONE, false), 64, 64));
         EntityRendererRegistry.register(CompanionMod.COMPANION, CompanionRenderer::new);
+        TelemetryClient.register();
     }
 }
