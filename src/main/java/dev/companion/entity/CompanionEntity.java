@@ -38,7 +38,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Player-shaped companion. Tame it with an apple, then it follows you like a wolf,
+ * Player-shaped companion. Spawns naturally in the Overworld. Tame it with a gold ingot, then it follows you like a wolf,
  * fights with you, and fetches dropped items (apples from trees, mob drops, etc.).
  */
 public class CompanionEntity extends TameableEntity {
@@ -92,7 +92,7 @@ public class CompanionEntity extends TameableEntity {
         World world = this.getWorld();
 
         if (!this.isTamed()) {
-            if (stack.isOf(Items.APPLE)) {
+            if (stack.isOf(Items.GOLD_INGOT)) {
                 if (!player.getAbilities().creativeMode) {
                     stack.decrement(1);
                 }

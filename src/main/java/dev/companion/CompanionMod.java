@@ -8,6 +8,11 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.SpawnRestriction;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.world.Heightmap;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SpawnEggItem;
@@ -22,8 +27,12 @@ public class CompanionMod implements ModInitializer {
     public static final EntityType<CompanionEntity> COMPANION = Registry.register(
             Registries.ENTITY_TYPE,
             id("companion"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CompanionEntity::new)
+            FabricEntityTypeBuilder.<CompanionEntity>createMob()
+                    .spawnGroup(SpawnGroup.CREATURE)
+                    .entityFactory(CompanionEntity::new)
                     .dimensions(EntityDimensions.fixed(0.6f, 1.8f))
+                    .spawnRestriction(SpawnRestriction.Location.ON_GROUND,
+                            Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn)
                     .trackRangeBlocks(10)
                     .build()
     );
@@ -43,6 +52,8 @@ public class CompanionMod implements ModInitializer {
     public void onInitialize() {
         FabricDefaultAttributeRegistry.register(COMPANION, CompanionEntity.createCompanionAttributes());
         SwordDrawSound.register();
+        // Natural spawning: rare, single, on grass in any Overworld biome.
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.CREATURE, COMPANION, 4, 1, 1);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> entries.add(COMPANION_SPAWN_EGG));
     }
 

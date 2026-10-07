@@ -7,14 +7,14 @@
 <img src="https://img.shields.io/badge/Status-Alpha-FF6B6B?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
 
-**Kabildzon** — верный напарник для Minecraft.<br/>
-Ходит за тобой, защищает в бою и приносит всё, что упало на землю.
+**Kabildzon** is a loyal companion for Minecraft.<br/>
+He follows you around, fights by your side and brings you everything that drops on the ground.
 
 </div>
 
 ---
 
-## 🍎 Возможности
+## 🍎 Features
 
 <table>
 <tr>
@@ -25,22 +25,23 @@
 </td>
 <td>
 
-### Приносит предметы
-Яблоко упало с дерева, с моба выпал лут или ты сам что-то выбросил — Kabildzon подбежит, подберёт предмет и отдаст его тебе прямо в инвентарь.
+### Fetches items
+An apple fell from a tree, a mob dropped loot, or you threw something away — Kabildzon runs over, picks it up and puts it straight into your inventory.
 
-Передавая предмет, он проигрывает свой звук 🔊
+He plays his own sound when handing the item over 🔊
 
 </td>
 </tr>
 <tr>
 <td>
 
-### Надёжный компаньон
-- 🚶 Следует за хозяином и телепортируется к нему, если отстал
-- ⚔️ Атакует твоих врагов и защищает тебя
-- 🪑 Остаётся на месте по команде
-- 💔 Издаёт свой звук при получении урона
-- 🥇 Всегда держит слиток золота в левой руке — он выпадает, если Kabildzon погибнет
+### A reliable companion
+- 🌍 Spawns naturally and wanders the Overworld
+- 🚶 Follows his owner and teleports back if left behind
+- ⚔️ Attacks your enemies and protects you
+- 🪑 Stays put on command
+- 💔 Has his own hurt sound
+- 🥇 Always holds a gold ingot in his left hand — it drops if he dies
 
 </td>
 <td width="45%">
@@ -53,50 +54,51 @@
 
 ---
 
-## 🎮 Управление
+## 🎮 How to play
 
-| | Действие | Как сделать |
+| | Action | How |
 |:-:|---|---|
-| <img src="docs/egg.png" width="40"/> | **Призвать** | `Kabildzon Egg` во вкладке «Яйца призыва» или команда `/summon companion:companion` |
-| <img src="docs/apple.png" width="40"/> | **Приручить** | ПКМ **яблоком** — шанс 1 к 3, при успехе появятся сердечки ❤️ |
-| ✋ | **Посадить / поднять** | ПКМ пустой рукой |
-| 🍖 | **Вылечить** | ПКМ любой едой |
-| <img src="docs/iron_sword.png" width="40"/> | **Звук меча** | Возьми любой меч в руку — звук услышат все игроки рядом |
+| 🌍 | **Find** | Look for him on grass in any Overworld biome — he is rare |
+| <img src="docs/egg.png" width="40"/> | **Summon** | `Kabildzon Egg` in the Spawn Eggs tab, or `/summon companion:companion` |
+| 🥇 | **Tame** | Right-click with a **gold ingot** — 1 in 3 chance, hearts ❤️ mean success |
+| ✋ | **Sit / stand** | Right-click with an empty hand |
+| <img src="docs/apple.png" width="40"/> | **Heal** | Right-click with any food |
+| <img src="docs/iron_sword.png" width="40"/> | **Sword sound** | Hold any sword — every player nearby will hear it |
 
 ---
 
-## 📦 Установка
+## 📦 Installation
 
-1. Установи **[Fabric Loader](https://fabricmc.net/use/)** для Minecraft **1.20.1**.
-2. Положи в папку `mods`:
-   - **[Fabric API](https://modrinth.com/mod/fabric-api)** для версии 1.20.1;
-   - `kabildzon-x.x.x.jar` — свежая сборка во вкладке **Actions → последний запуск → Artifacts**.
-3. Запусти игру и найди яйцо в творческом инвентаре 🥚
+1. Install **[Fabric Loader](https://fabricmc.net/use/)** for Minecraft **1.20.1**.
+2. Put into your `mods` folder:
+   - **[Fabric API](https://modrinth.com/mod/fabric-api)** for 1.20.1;
+   - `kabildzon-x.x.x.jar` — the latest build from **Actions → latest run → Artifacts**.
+3. Launch the game and go find Kabildzon 🥚
 
 ---
 
-## 🛠️ Сборка из исходников
+## 🛠️ Building from source
 
 ```bash
-# требуется JDK 17
+# requires JDK 17
 gradle build
-# готовый файл: build/libs/kabildzon-<version>.jar
+# output: build/libs/kabildzon-<version>.jar
 ```
 
 <details>
-<summary>📁 Расположение ассетов</summary>
+<summary>📁 Asset locations</summary>
 
-| Файл | Назначение |
+| File | Purpose |
 |---|---|
-| `assets/companion/textures/entity/companion.png` | HD-скин 512×512 (развёртка игрока) |
-| `assets/companion/sounds/companion/give.ogg` | звук передачи предмета |
-| `assets/companion/sounds/companion/hurt.ogg` | звук получения урона |
-| `assets/companion/sounds/companion/sword_draw.ogg` | звук доставания меча |
+| `assets/companion/textures/entity/companion.png` | HD skin 512×512 (player layout) |
+| `assets/companion/sounds/companion/give.ogg` | item hand-over sound |
+| `assets/companion/sounds/companion/hurt.ogg` | hurt sound |
+| `assets/companion/sounds/companion/sword_draw.ogg` | sword draw sound |
 
 </details>
 
 <div align="center">
 
-<sub>Сделано с ❤️ и яблоками</sub>
+<sub>Made with ❤️ and gold</sub>
 
 </div>
