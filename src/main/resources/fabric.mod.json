@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "companion",
+  "version": "${version}",
+  "name": "Kabildzon",
+  "description": "Kabildzon — a loyal player-like companion that follows you and fetches dropped items.",
+  "authors": [
+    "sindrom boga"
+  ],
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.companion.CompanionMod"
+    ],
+    "client": [
+      "dev.companion.client.CompanionClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}

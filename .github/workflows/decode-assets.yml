@@ -1,0 +1,24 @@
+name: Decode binary assets
+
+on:
+  push:
+    paths:
+      - "**.b64.part*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode
+        run: bash .github/decode-assets.sh --git
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || (git commit -m "Decode binary assets" && git push)

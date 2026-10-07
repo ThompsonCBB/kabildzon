@@ -1,0 +1,20 @@
+{
+  "companion.hurt": {
+    "subtitle": "subtitles.companion.hurt",
+    "sounds": [
+      "companion:companion/hurt"
+    ]
+  },
+  "companion.give": {
+    "subtitle": "subtitles.companion.give",
+    "sounds": [
+      "companion:companion/give"
+    ]
+  },
+  "companion.sword_draw": {
+    "subtitle": "subtitles.companion.sword_draw",
+    "sounds": [
+      "companion:companion/sword_draw"
+    ]
+  }
+}
