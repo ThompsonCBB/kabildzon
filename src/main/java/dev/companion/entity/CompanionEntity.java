@@ -49,6 +49,17 @@ public class CompanionEntity extends TameableEntity {
         super(type, world);
         this.setTamed(false);
         this.setEquipmentDropChance(EquipmentSlot.MAINHAND, 2.0f);
+        // Always holds a gold ingot in the left (off) hand; it always drops on death.
+        this.equipStack(EquipmentSlot.OFFHAND, new ItemStack(Items.GOLD_INGOT));
+        this.setEquipmentDropChance(EquipmentSlot.OFFHAND, 2.0f);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (!this.getWorld().isClient && this.isAlive() && !this.getOffHandStack().isOf(Items.GOLD_INGOT)) {
+            this.equipStack(EquipmentSlot.OFFHAND, new ItemStack(Items.GOLD_INGOT));
+        }
     }
 
     public static DefaultAttributeContainer.Builder createCompanionAttributes() {
