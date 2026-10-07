@@ -3,7 +3,7 @@ name: Decode binary assets
 on:
   push:
     paths:
-      - "**.b64.part*"
+      - ".github/decode-now"
   workflow_dispatch:
 
 permissions:
@@ -20,5 +20,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git rm -q --ignore-unmatch .github/decode-now
           git add -A
           git diff --cached --quiet || (git commit -m "Decode binary assets" && git push)
